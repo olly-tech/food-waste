@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --darkpurple:#474973;
+  --purple:#7D5BA6;
+  --lightpurple:#f7f9f9;
+  --orange:#DE6E4B;
+  --limegreen:#C2E812;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* NAV BAR */
+/* NAV BAR END */
+
+/* HERO-IMAGE */
+.hero, .scroll2, .steps{
+  position:relative;
+  width:100vw;
+  height:100vh;
+
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero-content, .scroll2-content, .steps-content {
+  position:relative;
+
+  text-align: center;
+  color:var(--lightpurple);
+  margin:1vw;
+  padding: 1vw;
+}
+
+
+.hero-button {
+  background-color: var(--orange);
+  border: 1px solid var(--limegreen);
+  border-radius: 20%;
+  cursor: pointer;
+
+  margin-top:5rem;
+  padding:0.5rem;
+
+  color: var(--lightpurple);
+  font-size: 1.125rem;
+  font-weight: 200;
+}
+
+.hero::before {
+  content: "";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color: var(--darkpurple);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  filter:brightness(50%);
+}
+
+.scroll2 {
+  background-color: var(--orange);
+  color:var(--lightpurple);
+}
+.scroll2-content h2 {
+  font-weight: 300;
+}
+
+.steps {
+  background-color: var(--darkpurple);
+}
+
+/* WORD ANIMATION WASTE LESS TIME/ENERGY/FOOD */
+@keyframes word-animation {
+  0% {content:"...";}
+  25% {content: "time";}
+  50% {content:"energy";}
+  75% {content:"food"};
+}
+.word-animation::after {
+  content:"...";
+  animation-name: word-animation;
+  animation-delay: 1s;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+.word-animation {
+  font-weight: 600;
+  color:var(--limegreen);
+}
+/**/
+
+
+/**/
+.steps-container {
+  display:flex;
+  flex-wrap:nowrap;
+  overflow-x: auto;
+  width: 75vw;
+  border: 1px solid var(--lightpurple);
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  &::-webkit-scrollbar {
+    display:none;
+  }
+}
+
+.box {
+  flex: 0 0 auto;
+  background-color: var(--limegreen);
+  margin: 2.5vw;
+  padding:1vw;
+  width:50vw;
+  aspect-ratio: 1/1;
+  scroll-snap-stop: always;
+  scroll-snap-align: center;
+}
+
+.steps-title {
+  background-color: var(--lightpurple);
+}
+
+
+
+
+/**/
